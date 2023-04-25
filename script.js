@@ -14,14 +14,14 @@ if (localStorage.getItem("memo")) {
 // 저장 버튼 클릭 이벤트
 saveBtn.addEventListener("click", () => {
   localStorage.setItem("memo", memoText.value);
-  alert("메모가 저장되었습니다.");
+  alert("Your data has been saved!");
 });
 // 초기화 버튼 클릭 이벤트
 clearBtn.addEventListener("click", () => {
   localStorage.removeItem("memo");
   titleText.value = "";
   memoText.value = "";
-  alert("메모가 초기화되었습니다.");
+  alert("Your texts have been removed.");
 });
 
 // 저장
