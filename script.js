@@ -14,7 +14,7 @@ if (localStorage.getItem("memo")) {
 // 저장 버튼 클릭 이벤트
 saveBtn.addEventListener("click", () => {
   localStorage.setItem("memo", memoText.value);
-  alert("Your data has been saved!");
+  alert("Your text has been successfully saved!");
 });
 // 초기화 버튼 클릭 이벤트
 clearBtn.addEventListener("click", () => {
@@ -24,7 +24,7 @@ clearBtn.addEventListener("click", () => {
   alert("Your texts have been removed.");
 });
 
-// 저장
+// 메모 저장
 function saveNote() {
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
@@ -35,7 +35,7 @@ function saveNote() {
   render();
 }
 
-// 추가할 때 나타나는 동작과 스타일
+// 포스트잇 추가 기능 (포스트잇 스타일, 삭제버튼)
 function render() {
   const display = document.getElementById("display");
   display.innerHTML = "";
@@ -48,15 +48,13 @@ function render() {
 
     saveTitle.textContent = item.title;
     saveContent.textContent = item.content;
-    // saveId.textContent = item.len + 1;
     deleteMemoBtn.textContent = "Del";
     deleteMemoBtn.setAttribute("id", item.len);
     deleteMemoBtn.setAttribute("onclick", "remove()");
     deleteMemoBtn.style.background = "#53535f";
     deleteMemoBtn.style.color = "white";
-    deleteMemoBtn.style.width = "40px";
-    deleteMemoBtn.style.height = "40px";
-    deleteMemoBtn.style.padding = "0";
+    deleteMemoBtn.style.width = "60px";
+    deleteMemoBtn.style.padding = "5px";
 
     display.style.width = "200px";
     display.style.padding = "20px";
@@ -75,7 +73,7 @@ function render() {
   }
 }
 
-// 삭제 버튼
+// 메모 삭제
 function remove() {
   const idx = allMemo.find((item) => item.len == event.srcElement.id);
   if (idx) {
