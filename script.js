@@ -49,7 +49,7 @@ function render() {
     saveTitle.textContent = item.title;
     saveContent.textContent = item.content;
     // saveId.textContent = item.len + 1;
-    deleteMemoBtn.textContent = "삭제";
+    deleteMemoBtn.textContent = "Del";
     deleteMemoBtn.setAttribute("id", item.len);
     deleteMemoBtn.setAttribute("onclick", "remove()");
     deleteMemoBtn.style.background = "#53535f";
